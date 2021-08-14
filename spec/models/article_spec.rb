@@ -21,5 +21,21 @@
 require "rails_helper"
 
 RSpec.describe Article, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  # pending "add some examples to (or delete) #{__FILE__}"
+  context "title が30文字以下の時" do
+    it "article が作成される" do
+      FactoryBot.create(:user, id: 1)
+      article = FactoryBot.build(:article, user_id: 1)
+      expect(article).to be_valid
+    end
+  end
+
+  context "title が31文字以上の時" do
+    it "article が作成されない" do
+      FactoryBot.create(:user, id: 1)
+      article = FactoryBot.build(:article, title: "あああああああああああああああああああああああああああああああ", user_id: 1)
+      expect(article).to be_invalid
+    end
+  end
+
 end

@@ -18,10 +18,9 @@
 #
 #  fk_rails_...  (user_id => users.id)
 #
-class Article < ApplicationRecord
-  has_many :likes, dependent: :destroy
-  has_many :comments, dependent: :destroy
-  belongs_to :user
-
-  validates :title, length: { maximum: 30 }
+FactoryBot.define do
+  factory :article do
+    title { Faker::Food.sushi }
+    body { Faker::String.random }
+  end
 end

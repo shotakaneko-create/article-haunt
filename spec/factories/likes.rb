@@ -18,8 +18,7 @@
 #  fk_rails_...  (article_id => articles.id)
 #  fk_rails_...  (user_id => users.id)
 #
-require "rails_helper"
-
-RSpec.describe Like, type: :model do
-  # pending "add some examples to (or delete) #{__FILE__}"
+FactoryBot.define do
+  factory :like do
+  end
 end
