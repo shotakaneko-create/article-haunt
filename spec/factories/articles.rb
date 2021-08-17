@@ -22,5 +22,6 @@ FactoryBot.define do
   factory :article do
     title { Faker::Food.sushi }
     body { Faker::String.random }
+    user
   end
 end
