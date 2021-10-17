@@ -20,8 +20,8 @@
 #
 FactoryBot.define do
   factory :article do
-    title { Faker::Food.sushi }
-    body { Faker::String.random }
+    title { Faker::Lorem.word }
+    body { Faker::Lorem.sentence }
     user
   end
 end
