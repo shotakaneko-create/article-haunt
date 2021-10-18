@@ -20,17 +20,6 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context "name が重複している時" do
-    let(:user) { FactoryBot.build(:user, name: "aaa") }
-    it "ユーザーが作成されない" do
-      aggregate_failures "最後まで通過する" do
-        FactoryBot.create(:user, name: "aaa")
-        expect(user).to be_invalid
-        expect(user.errors.details[:name][0][:error]).to eq :taken
-      end
-    end
-  end
-
   context "password が指定されていない時" do
     let(:user) { FactoryBot.build(:user, password: nil) }
     it "ユーザーが作成されない" do
