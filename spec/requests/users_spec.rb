@@ -1,9 +1,9 @@
 require "rails_helper"
 
 RSpec.describe "Users", type: :request do
-  describe "GET /index" do
-    pending "add some examples (or delete) #{__FILE__}"
-  end
+  # describe "GET /index" do
+  #   pending "add some examples (or delete) #{__FILE__}"
+  # end
 
   describe "POST /api/v1/auth" do
     subject { post(api_v1_user_registration_path, params: params) }

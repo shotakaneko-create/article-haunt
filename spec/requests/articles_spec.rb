@@ -99,7 +99,7 @@ RSpec.describe "Api::V1::Articles", type: :request do
       let(:user1) { create(:user) }
 
       it "任意の記事を更新できない" do
-        expect { subject }.to not_change { article1 }
+        expect { subject }.to not_change { article }
       end
     end
   end
