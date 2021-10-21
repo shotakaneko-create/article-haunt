@@ -39,7 +39,7 @@ RSpec.describe Article, type: :model do
   context "初めて記事を作成した時" do
     let(:article) { build(:article) }
     it "下書きとして保存できる" do
-      expect(article.status).to eq 0
+      expect(article.status).to eq "draft"
       expect(article).to be_valid
     end
   end
