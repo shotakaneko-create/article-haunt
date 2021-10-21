@@ -26,5 +26,5 @@ class Article < ApplicationRecord
 
   validates :title, length: { maximum: 30 }
 
-  enum status: {draft: 0, published: 1}
+  enum status: { draft: 0, published: 1 }
 end
