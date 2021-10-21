@@ -5,6 +5,7 @@
 #  id         :bigint           not null, primary key
 #  body       :text
 #  draft      :string
+#  status     :integer          default(0)
 #  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
