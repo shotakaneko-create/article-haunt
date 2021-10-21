@@ -5,6 +5,7 @@
 #  id         :bigint           not null, primary key
 #  body       :text
 #  draft      :string
+#  status     :integer          default(0)
 #  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -24,4 +25,6 @@ class Article < ApplicationRecord
   belongs_to :user
 
   validates :title, length: { maximum: 30 }
+
+  enum status: {draft: 0, published: 1}
 end
