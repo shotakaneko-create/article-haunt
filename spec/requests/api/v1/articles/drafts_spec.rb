@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "Api::V1::Articles::Drafts", type: :request do
   describe "GET /index" do
@@ -15,7 +15,7 @@ RSpec.describe "Api::V1::Articles::Drafts", type: :request do
     it "記事の一覧を参照できる" do
       subject
       res = JSON.parse(response.body)
-      expect(res.map {|date| date["id"]}).to eq [article1.id, article2.id, article3.id]
+      expect(res.map {|date| date["id"] }).to eq [article1.id, article2.id, article3.id]
       expect(res.length).to eq 3
       expect(res[0].keys).to eq ["id", "title", "updated_at", "status", "user"]
       expect(res[0]["user"].keys).to eq ["id", "name", "email"]
