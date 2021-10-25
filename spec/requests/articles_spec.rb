@@ -12,7 +12,6 @@ RSpec.describe "Api::V1::Articles", type: :request do
       aggregate_failures "最後まで通過" do
         subject
         res = JSON.parse(response.body)
-        expect(response).to have_http_status(:ok)
         expect(res.map {|date| date["id"] }).to eq [article1.id, article2.id, article3.id]
         expect(res.length).to eq 3
         expect(res[0].keys).to eq ["id", "title", "updated_at", "status", "user"]
