@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "Api::V1::Current::Articles", type: :request do
   describe "GET  /api/v1/current/articles" do
@@ -11,9 +11,9 @@ RSpec.describe "Api::V1::Current::Articles", type: :request do
     let!(:article2) { create(:article, :published, updated_at: 1.days.ago, user: current_user) }
     let!(:article3) { create(:article, :published, updated_at: 2.days.ago, user: current_user) }
 
-    before { create(:article, :draft)}
+    before { create(:article, :draft) }
 
-    fit "自分の書いた記事一覧を参照できる" do
+    it "自分の書いた記事一覧を参照できる" do
       subject
       res = JSON.parse(response.body)
       expect(res.length).to eq 3
